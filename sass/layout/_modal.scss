@@ -1,0 +1,252 @@
+
+@media screen and (min-width: 320px) {
+    .modal {
+        width: calc(100% - 30px);
+        height: auto;
+        &-form {
+            &-input {
+                width: 100%;
+            }
+            &-check {
+                display: flex;
+                flex-wrap: nowrap;
+                gap: 10px;
+                &-descript {
+                display: inline-block;
+                font-size: 12px;
+                line-height: 1.17;
+                letter-spacing: 0.03em;
+                color: var(--back-border);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .modal {
+        width: 528px;
+        height: 580px;
+    &-form {
+            &-check {
+                &-descript {
+                    font-size: 14px;
+                    line-height: 1.71;
+                    letter-spacing: 0.03em;
+                }
+            }
+        }
+    }
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    background-color: #000000AA;
+    transition: opacity var(--animation), visibility var(--animation);
+    &.is-hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+}
+
+@mixin bordered($color) {
+    border: 1px solid $color;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 4px;
+    background-color: var(--add-color);
+    padding: 40px;
+    &-button {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 8px;
+        right: 8px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: transparent;
+        @include bordered(#ccc);
+        transition: var(--animation);
+
+        &:hover,
+        &:focus {
+            @include bordered(var(--brand-color));
+        }
+    }
+    &-svg {
+        height: 11px;
+        width: 11px;
+        transition: var(--animation);
+    
+        .modal-button:hover &,
+        .modal-button:focus & {
+            fill: var(--brand-color);
+        }
+    }
+    &-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    
+        &-text {
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 1.15;
+            text-align: center;
+            letter-spacing: 0.03em;
+        }
+    
+        &-field {
+            display: line-block;
+            gap: 10px;
+    
+            font-size: 12px;
+            line-height: 1.14;
+            letter-spacing: 0.01em;
+    
+            color: var(--back-color);
+    
+            &-descript {
+                display: block;
+                margin-bottom: 4px;
+    
+                font-size: 12px;
+                line-height: 1.16;
+                letter-spacing: 0.01em;
+            }
+    
+            &-wrapper {
+                display: block;
+                position: relative;
+            }
+        }
+    
+        &-input {
+            width: 100%;
+            padding: 12px 42px;
+            @include bordered(var(--modal-border));
+            border-radius: 4px;
+            outline: none;
+            transition: var(--animation);
+    
+            &:focus-within,
+            &:hover,
+            &:focus {
+                border-color: var(--brand-color);
+    
+                &+.modal-form-svg,
+                &+.modal-form-svg,
+                &+.modal-form-svg {
+                    fill: var(--brand-color);
+                }
+            }
+        }
+    
+        &-svg {
+            position: absolute;
+            top: 50%;
+            left: 12px;
+            width: 18px;
+            height: 18px;
+            transform: translateY(-50%);
+            transition: var(--animation);
+        }
+    
+        &-messege {
+            display: block;
+            height: 120px;
+            width: 100%;
+            padding: 12px 16px;
+            @include bordered(var(--modal-border));
+            border-radius: 4px;
+            resize: none;
+            outline: none;
+            transition: var(--animation);
+    
+            &::placeholder {
+                transition: var(--animation);
+            }
+    
+            &:focus-within,
+            &:hover,
+            &:focus {
+                border-color: var(--brand-color);
+    
+                &::placeholder {
+                    color: var(--brand-color);
+                }
+            }
+        }
+    
+        &-check {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            line-height: 1.71;
+            letter-spacing: 0.03em;
+
+            color: var(--back-color);
+    
+            &-svg {  
+                width: 16px;
+                height: 15px;
+                border: 1px solid var(--icon-border);
+                border-radius: 2px;
+                cursor: pointer;
+                transition: var(--animation);
+    
+                .modal-form-check-box:checked+& {
+                    background-color: var(--brand-color);
+                    border: 0px;
+    
+                    & .modal-form-use {
+                        background-color: var(--brand-color);
+                        display: block;
+                    }
+                }
+            }
+        }
+    
+        &-use {
+            display: none;
+        }
+    
+        &-link:visited {
+            color: var(--brand-color);
+        }
+    
+        &-button {
+            margin-top: 20px;
+            margin-right: auto;
+            margin-left: auto;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            padding: 10px 28px;
+    
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 1.88;
+    
+            border: 0;
+            border-radius: 4px;
+            color: var(--add-color);
+            background-color: var(--brand-color);
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+        }
+    }
+}

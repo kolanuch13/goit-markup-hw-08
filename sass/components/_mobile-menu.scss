@@ -1,0 +1,150 @@
+    .menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        width: 100%;
+        height: 100%;
+        max-height: 796px;
+        background-color: var(--add-color);
+        box-shadow: 0 0 0 100vmax var(--modal-border);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity var(--animation), visibility var(--animation);
+        &.is-open {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transition: var(--animation);
+        }
+        &__container {
+            padding-left: 40px;
+            padding-top: 48px;
+            padding-bottom: 58px;
+        }
+        &__button-close {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 10px;
+            right: 15px;
+            height: 40px;
+            width: 40px;
+            line-height: 0;
+            background-color: transparent;
+            transition: var(--animation);
+            border: none;
+            &-svg {
+                height: 40px;
+                transition: var(--animation);
+    
+                .menu__button-close:hover &,
+                .menu__button-close:focus & {
+                    fill: var(--brand-color);
+                }
+            }
+        }
+        justify-content: space-between;
+        &-nav {
+            display: flex;
+            font-weight: 500;
+            font-size: 40px;
+            line-height: 1.17;
+            letter-spacing: 0.02em;
+            &__list {
+                display: flex;
+                flex-direction: column;
+                align-content: center;
+                align-items: flex-start;
+                row-gap: 32px;
+    
+                &-item {
+                    position: relative;
+                }
+    
+                &-link {
+                    color: var(--main-color);
+                    transition: var(--animation);
+    
+                    &:hover,
+                    &:focus {
+                        color: var(--brand-color);
+                        position: relative;
+                    }
+    
+                    &--current,
+                    &--current:visited {
+                        color: var(--brand-color);
+                        position: relative;
+                    }
+                }
+            }
+        }
+        &-contact {
+            &__list {
+            position: absolute;
+            display: flex;
+            align-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            row-gap: 32px;
+            bottom: 120px;
+            &-number {
+                font-weight: 500;
+                font-size: 34px;
+                line-height: 1.17;
+                letter-spacing: 0.02em;
+                color: var(--brand-color)
+            }
+            &-email,
+            &-email:visited {
+                display: flex;
+    
+                gap: 10px;
+                color: var(--back-color);
+                transition: var(--animation);
+    
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 28px;
+                letter-spacing: 0.02em;
+                &:hover,
+                &:focus {
+                    color: var(--brand-color);
+                }
+    
+            }
+        }
+        }
+        &-social {
+            &__list {
+                position: absolute;
+                bottom: 48px;
+                display: flex;
+                flex-direction: row;
+                column-gap: 10px;
+                flex-wrap: wrap;
+    
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 1.22;
+                letter-spacing: 0.02em;
+                &-link,
+                &-link:visited {
+                    color:var(--brand-color);
+                    &::after {
+                        content: '|';
+                        color: #21212133;
+                    }
+                }
+            }
+        }
+    }
+
+@media screen and (min-width: 768px) {
+    .mobile-menu {
+        display: none;
+    }
+}
