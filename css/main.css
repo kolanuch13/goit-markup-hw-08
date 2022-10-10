@@ -1007,7 +1007,7 @@ ul {
   letter-spacing: 0.03em;
 }
 .modal-form-field {
-  display: line-block;
+  display: inline-block;
   gap: 10px;
   font-size: 12px;
   line-height: 1.14;
@@ -1151,6 +1151,7 @@ ul {
   }
   .project-list {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     flex-basis: 100%;
     row-gap: 30px;
