@@ -131,13 +131,15 @@
                 font-size: 18px;
                 line-height: 1.22;
                 letter-spacing: 0.02em;
-                &-link,
-                &-link:visited {
-                    color:var(--brand-color);
+                &-item:not(:last-child) {
                     &::after {
                         content: '|';
                         color: #21212133;
                     }
+                }
+                &-link,
+                &-link:visited {
+                    color:var(--brand-color);
                 }
             }
         }

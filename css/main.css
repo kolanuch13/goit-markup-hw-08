@@ -305,12 +305,12 @@ ul {
   line-height: 1.22;
   letter-spacing: 0.02em;
 }
-.menu-social__list-link, .menu-social__list-link:visited {
-  color: var(--brand-color);
-}
-.menu-social__list-link::after, .menu-social__list-link:visited::after {
+.menu-social__list-item:not(:last-child)::after {
   content: "|";
   color: rgba(33, 33, 33, 0.2);
+}
+.menu-social__list-link, .menu-social__list-link:visited {
+  color: var(--brand-color);
 }
 
 @media screen and (min-width: 768px) {
