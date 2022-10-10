@@ -1,8 +1,8 @@
 @import './utils/variables';
 @import './utils/visually_hidden';
-// ====================================
+
 @import './base/base';
-// ====================================
+
 @import './components/button';
 @import './components/container';
 @import './components/logo';
@@ -10,7 +10,7 @@
 @import './components/social';
 @import './components/titles';
 @import './components/mobile-menu';
-// ====================================
+
 @import './layout/header';
 @import './layout/hero';
 @import './layout/features';
@@ -19,5 +19,5 @@
 @import './layout/clients';
 @import './layout/footer';
 @import './layout/modal';
-// ====================================
-@import './layout/project'
+
+@import './layout/project';
