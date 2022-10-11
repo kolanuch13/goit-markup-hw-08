@@ -852,6 +852,8 @@ ul {
     padding-top: 15px;
     padding-bottom: 15px;
     padding-left: 16px;
+    width: calc(100vw - 30px);
+    max-width: 450px;
     color: var(--add-color);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 4px;
@@ -896,9 +898,6 @@ ul {
     flex-wrap: wrap;
     justify-content: space-around;
   }
-  .form__input {
-    width: 358px;
-  }
 }
 @media screen and (min-width: 1200px) {
   .footer .address__list {
@@ -912,6 +911,9 @@ ul {
   }
   .form {
     align-items: flex-start;
+  }
+  .form__input {
+    width: 358px;
   }
   .form__field {
     align-items: flex-start;
@@ -1159,10 +1161,10 @@ ul {
   }
   .project-list {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
     flex-basis: 100%;
-    row-gap: 30px;
+    margin-bottom: 60px;
+    gap: 30px;
   }
   .project-link {
     color: var(--add-color);
@@ -1227,10 +1229,6 @@ ul {
   .filter-list {
     justify-content: center;
     margin-bottom: 50px;
-  }
-  .project-list {
-    margin-bottom: 60px;
-    gap: 30px;
   }
   .project-item {
     width: calc((100% - 30px) / 2);

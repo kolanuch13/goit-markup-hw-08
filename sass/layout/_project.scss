@@ -37,11 +37,12 @@
     }
     .project-list {
         display: flex;
-        justify-content: center;
         flex-wrap: wrap;
         flex-basis: 100%;
-        row-gap: 30px;
+        margin-bottom: 60px;
+        gap: 30px;
     }   
+    
     .project-link {
         color: var(--add-color);
     }
@@ -115,11 +116,6 @@
     .filter-list {
         justify-content: center;
         margin-bottom: 50px;
-    }
-
-    .project-list {
-        margin-bottom: 60px;
-        gap: 30px;
     }
     
     .project-item {

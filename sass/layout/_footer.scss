@@ -122,7 +122,8 @@
             padding-top: 15px;
             padding-bottom: 15px;
             padding-left: 16px;
-    
+            width: calc(100vw - 30px);
+            max-width: 450px;
             color: var(--add-color);
             border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 4px;
@@ -179,9 +180,7 @@
         }
     }
 
-    .form__input {
-        width: 358px;
-    }
+    
 }
 
 @media screen and (min-width: 1200px) {
@@ -200,6 +199,10 @@
 
     .form {
         align-items: flex-start;
+    }
+
+    .form__input {
+        width: 358px;
     }
 
     .form__field {
